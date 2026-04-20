@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>功用流芳 - 古建图鉴</title>
+<style>
+  /* ----- 重置 & 基础 ----- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image/首页背景图.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: system-ui, 'Segoe UI', 'Noto Sans', 'Microsoft YaHei', sans-serif;
+    line-height: 1.5;
+  }
+
+  /* 页面大标题 */
+  .page-title {
+    text-align: center;
+    font-size: 34px;
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+    color: #222;
+  }
+  .page-desc {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+
+  /* 导航栏 (sticky + 弹性) */
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgb(234, 252, 252);
+    padding: 15px 12px;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  nav a {
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    font-size: 1rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  nav a:hover {
+    border-bottom: 2px solid #00a4ff;
+  }
+
+  /* 主要内容容器 */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
+  }
+
+  /* 每个 section 卡片样式 */
+  section {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(1px);
+    border-radius: 36px;
+    margin-bottom: 48px;
+    padding: 28px 28px 32px 28px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: transparent;
+    border-radius: 28px;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .img-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(245, 245, 235, 0.4);
+    border-radius: 32px;
+    padding: 20px 12px 12px 12px;
+  }
+
+  .img-top img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 28px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    object-fit: cover;
+    max-height: 280px;
+    width: auto;
+  }
+
+  .text-bottom {
+    width: 100%;
+    background: rgba(250, 250, 245, 0.7);
+    border-radius: 28px;
+    padding: 20px 24px;
+    font-family: 'WangXizhiFont', 'Noto Serif SC', 'Times New Roman', serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #2c3e2a;
+    text-align: justify;
+    letter-spacing: 0.01em;
+    text-indent: 2em; /* 首行缩进两格 —— 国风必备 */
+  }
+
+  .title {
+    font-size: 2rem;
+    font-family: serif;
+    color: black;
+  }
+
+  .word {
+    font-size: 1rem;
+    font-family: 'WangXizhiFont', 'Noto Serif SC', 'Segoe UI', serif;
+    color: #2f4d2d;
+  }
+
+  /* 响应式 */
+  @media screen and (max-width: 768px) {
+    .container { padding: 16px; }
+    section { padding: 20px 18px 26px 18px; margin-bottom: 32px; }
+    .text-bottom { padding: 18px 16px; font-size: 0.95rem; }
+  }
+
+  @media screen and (max-width: 480px) {
+    section { padding: 16px 14px 22px 14px; border-radius: 28px; }
+    .text-bottom { padding: 14px 12px; font-size: 0.9rem; }
+  }
+
+  img { display: block; }
+
+  .text-bottom::first-letter {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #8b5a2b;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a onclick="scrollToSection('top')">功用流芳</a>
+  <a onclick="scrollToSection('n')">礼制与信仰</a>
+  <a onclick="scrollToSection('s')">安居与统治</a>
+  <a onclick="scrollToSection('ws')">通行与守卫</a>
+  <a onclick="scrollToSection('w')">游赏与寄情</a>
+</nav>
+
+<!-- 顶部标题 -->
+<div id="top" class="page-title">功用流芳</div>
+<div class="page-desc">建筑的终极意义，在于为人所用</div>
+
+<div class="container">
+  <!-- 礼制与信仰：天坛 -->
+  <section id="n">
+    <h1>
+      <div class="img-top">
+        <img src="./image/天坛.jpg" alt="天坛祈年殿" title="天坛 · 皇家祭天圣地" width="500" height="280" style="width:auto; max-width:90%;">
+      </div>
+      <div class="title">礼制与信仰</div>
+      <div class="text-bottom word">
+        在中国古代，皇帝自称“天子”，意思是天的儿子。既然是天的儿子，就必须定期向“老天爷”汇报工作、表达感恩，并祈求风调雨顺、国泰民安。这项活动叫做 “祭天大典”，是国家最高规格的典礼。天坛，就是明清两朝皇帝专门用来举行这项典礼的“神圣空间”。它建于1420年（与故宫同时期），比紫禁城还大四倍。天坛的建筑处处蕴含与天对话的密码，祈年殿、圜丘坛、回音壁，凝聚着古人对苍穹的敬畏与虔诚。
+      </div>
+    </h1>
+  </section>
+
+  <!-- 安居与统治：窑洞 -->
+  <section id="s">
+    <h1>
+      <div class="img-top">
+        <img src="./image/窑洞.jpg" alt="黄土高原窑洞" title="窑洞 · 大地的居所" width="500" height="280" style="width:auto; max-width:90%;">
+      </div>
+      <div class="title">安居与统治</div>
+      <div class="text-bottom word">
+        在黄土高原，古人没钱盖房，便向大地“借”洞而居。窑洞冬暖夏凉，厚土墙挡住风沙，土炕连着灶台，烧火做饭顺便暖了被窝。这里没有金碧辉煌，只有最朴素的生存智慧。几代人挤在一盘炕上吃饭、睡觉、聊天，接地气也接人气。窑洞不是简单的住所，而是老百姓与土地最深的依恋。从靠崖窑到地坑院，每一孔窑洞都凝聚着黄土儿女与自然共生的生活哲学。
+      </div>
+    </h1>
+  </section>
+
+  <!-- 通行与守卫：赵州桥 -->
+  <section id="ws">
+    <h1>
+      <div class="img-top">
+        <img src="./image/赵州桥.jpg" alt="赵州桥" title="赵州桥 · 千年石拱" width="500" height="280" style="width:auto; max-width:90%;">
+      </div>
+      <div class="title">通行与守卫</div>
+      <div class="text-bottom word">
+        在河北赵县洨河上，隋代匠人李春用一块块巨石，砌出了一座没有桥墩的单孔弧桥——赵州桥。它首创“敞肩拱”，两边各开两个小拱，既减轻桥身重量，又利于泄洪。一千四百年来，洪水冲不垮，地震摇不倒，至今稳稳横跨河上。赵州桥不只是桥，更是中国古代力学与美学的完美结合，是石头写成的传奇。它见证了桥梁技术与实用功能的至高融合，至今仍被世界桥梁界奉为经典。
+      </div>
+    </h1>
+  </section>
+
+  <!-- 游赏与寄情：苏州园林 -->
+  <section id="w">
+    <h1>
+      <div class="img-top">
+        <img src="./image/苏州园林.jpg" alt="苏州园林" title="苏州园林 · 文人山水梦" width="500" height="280" style="width:auto; max-width:90%;">
+      </div>
+      <div class="title">游赏与寄情</div>
+      <div class="text-bottom word">
+        在苏州，造园者把山水、花木、亭台塞进一方小院，造出一个可居、可游、可赏的梦。拙政园、留园等名园，不求宏大，只讲究“虽由人作，宛自天开”。一步一景，曲径通幽，借远处的塔、叠假山的洞，让人感觉空间无穷无尽。园主多是失意文人，他们把官场烦恼关在门外，躲进这小小天地，吟诗作画，寄情山水。苏州园林，是中国文人的精神后花园，也是东方生活美学的极致体现。
+      </div>
+    </h1>
+  </section>
+</div>
+
+<script>
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+    const navHeight = document.querySelector('nav')?.offsetHeight || 70;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navHeight - 12;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const target = document.getElementById(id);
+      if (target) {
+        setTimeout(() => {
+          const navHeight = document.querySelector('nav')?.offsetHeight || 70;
+          const pos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+          window.scrollTo({ top: pos, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  });
+</script>
+</body>
+</html>

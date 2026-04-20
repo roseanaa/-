@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>匠心营造 - 古建图鉴</title>
+<style>
+  /* ----- 重置 & 基础 ----- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image/首页背景图.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: system-ui, 'Segoe UI', 'Noto Sans', 'Microsoft YaHei', sans-serif;
+    line-height: 1.5;
+  }
+
+  /* 页面大标题 */
+  .page-title {
+    text-align: center;
+    font-size: 34px;
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+    color: #222;
+  }
+  .page-desc {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+
+  /* 导航栏 */
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgb(234, 252, 252);
+    padding: 15px 12px;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  nav a {
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    font-size: 1rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  nav a:hover {
+    border-bottom: 2px solid #00a4ff;
+  }
+
+  /* 容器 */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 区块标题 */
+  .title h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #222;
+  }
+
+  /* 布局：三列自适应 */
+  h1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    background: transparent !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 卡片样式（和整套网站统一） */
+  .box {
+    flex: 1;
+    min-width: 260px;
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  }
+
+  .box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .t1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+  }
+
+  .t2 {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    font-family: "SimSun", serif;
+  }
+
+  /* 区块间距 */
+  section {
+    background: transparent !important;
+    margin-bottom: 50px;
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 响应式 */
+  @media screen and (max-width: 768px) {
+    .container { padding: 20px; }
+    .box { min-width: 240px; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .box { min-width: 100%; }
+    .title h4 { font-size: 22px; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a onclick="scrollToSection('top')">匠心营造</a>
+  <a onclick="scrollToSection('n')">屋顶飞檐</a>
+  <a onclick="scrollToSection('s')">木构核心</a>
+  <a onclick="scrollToSection('ws')">空间意境</a>
+  <a onclick="scrollToSection('w')">装饰美学</a>
+</nav>
+
+<!-- 页面标题 -->
+<div id="top" class="page-title">匠心营造</div>
+<div class="page-desc">一榫一卯，一砖一瓦，藏千年营造智慧</div>
+
+<div class="container">
+
+<!-- 屋顶飞檐 -->
+<section id="n">
+  <div class="title"><h4>屋顶飞檐</h4></div>
+  <h1>
+    <div class="box">
+      <img src="./image/歇山顶.jpg" title="歇山顶">
+      <p class="t1">歇山顶</p>
+      <p class="t2">等级森严，四面出檐，庄严中见舒展。</p>
+    </div>
+    <div class="box">
+      <img src="./image/排水.jpg" title="排水">
+      <p class="t1">排水功能</p>
+      <p class="t2">曲线优雅，导水远逸，是智慧与美的融合。</p>
+    </div>
+    <div class="box">
+      <img src="./image/屋脊神兽.jpg" title="屋脊神兽">
+      <p class="t1">屋脊神兽</p>
+      <p class="t2">等级象征，守护建筑，兼具稳固与吉祥寓意。</p>
+    </div>
+  </h1>
+</section>
+
+<!-- 木构核心 -->
+<section id="s">
+  <div class="title"><h4>木构核心</h4></div>
+  <h1>
+    <div class="box">
+      <img src="./image/燕尾榫.jpg" title="燕尾榫">
+      <p class="t1">燕尾榫</p>
+      <p class="t2">木构灵魂，阴阳相扣，越受力越稳固。</p>
+    </div>
+    <div class="box">
+      <img src="./image/粽角榫.jpg" title="粽角榫">
+      <p class="t1">粽角榫</p>
+      <p class="t2">三向交织，无钉无胶，展现几何极致智慧。</p>
+    </div>
+    <div class="box">
+      <img src="./image/梁柱.jpg" title="梁柱">
+      <p class="t1">梁柱</p>
+      <p class="t2">以柔克刚，抬梁穿斗，成就殿堂千年风骨。</p>
+    </div>
+  </h1>
+</section>
+
+<!-- 空间意境 -->
+<section id="ws">
+  <div class="title"><h4>空间意境</h4></div>
+  <h1>
+    <div class="box">
+      <img src="./image/四合院.jpg" title="四合院">
+      <p class="t1">四合院</p>
+      <p class="t2">围合天地，礼序生活，藏风聚气之家。</p>
+    </div>
+    <div class="box">
+      <img src="./image/屏风.jpg" title="屏风">
+      <p class="t1">屏风</p>
+      <p class="t2">隔而不断，步移景异，一屏一世界。</p>
+    </div>
+    <div class="box">
+      <img src="./image/碧纱橱.jpg" title="碧纱橱">
+      <p class="t1">碧纱橱</p>
+      <p class="t2">通透朦胧，光影婆娑，诗意栖居的智慧。</p>
+    </div>
+  </h1>
+</section>
+
+<!-- 装饰美学 -->
+<section id="w">
+  <div class="title"><h4>装饰美学</h4></div>
+  <h1>
+    <div class="box">
+      <img src="./image/彩绘.jpg" title="彩绘">
+      <p class="t1">彩绘</p>
+      <p class="t2">色谱有制，纹样有章，是礼制更是画卷。</p>
+    </div>
+    <div class="box">
+      <img src="./image/石雕.jpg" title="石雕">
+      <p class="t1">石雕</p>
+      <p class="t2">石上生花，刚柔并济，讲述无声的故事。</p>
+    </div>
+    <div class="box">
+      <img src="./image/门窗图案.jpg" title="门窗图案">
+      <p class="t1">门窗图案</p>
+      <p class="t2">棂格万象，寓意深远，是呼吸的艺术。</p>
+    </div>
+  </h1>
+</section>
+
+</div>
+
+<script>
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+    const navHeight = document.querySelector('nav')?.offsetHeight || 70;
+    const pos = element.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+    window.scrollTo({ top: pos, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

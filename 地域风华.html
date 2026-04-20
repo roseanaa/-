@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地域风华 - 古建图鉴</title>
+<style>
+    /* 平板 */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 20px 15px;
+  }
+  h1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  section .l, section .r {
+    min-width: 100%;
+    margin: 10px 0;
+  }
+  nav a {
+    margin: 0 5px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 手机 */
+@media screen and (max-width: 480px) {
+  section {
+    padding: 15px 10px;
+  }
+  h1 {
+    padding: 15px;
+  }
+  nav {
+    padding: 10px;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+    padding: 8px;
+  }
+}
+  /* 基础样式 */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* 页面顶部标题 */
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 30px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 副标题 */
+.page-subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+  section {
+    height: auto;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 30px 20px;
+  }
+
+  nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgb(234, 252, 252);
+  padding: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  nav a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+  h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 180px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  flex-wrap: wrap;
+  padding: 25px;
+  transition: all 0.3s ease;
+  }
+
+  /* 卡片悬浮效果 */
+  h1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  body {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        url(./image/首页背景图.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    }
+
+    section .word{
+        font-size: 16px;
+        line-height: 1.7;
+        font-family: 'WangXizhiFont', serif;
+        color: #454545;
+    }
+
+    section .l, section .r {
+    flex: 1;
+    min-width: 280px;
+    padding: 10px;
+    }
+
+    section img {
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav>
+  <a onclick="scrollToSection('beidi')">北地雄浑</a>
+  <a onclick="scrollToSection('jiangnan')">江南隽秀</a>
+  <a onclick="scrollToSection('xinan')">西南奇崛</a>
+  <a onclick="scrollToSection('xiyu')">西域异彩</a>
+</nav>
+
+<!-- 页面标题 -->
+<div class="page-title">地域风华</div>
+<div class="page-subtitle">一方水土养一方建筑，四方风貌读懂中国古建</div>
+
+<!-- 内容部分 -->
+<div class="container">
+
+<section id="beidi">
+  <h1>
+    <div class="l word">
+      <strong>【北地雄浑 · 北京故宫】</strong><br><br>
+      大地的筋骨，皇权的具象。北方建筑以严整的轴线、厚重的体量，彰显礼制威严与磅礴力量。
+    </div>
+    <div class="r">
+        <img src="./image/北京故宫.jpg" title="北京故宫" width="280px">
+    </div>
+  </h1>
+</section>
+
+<section id="jiangnan">
+  <h1>
+    <div class="l">
+        <img src="./image/徽州.jpg" title="徽州古韵" width="280px">
+    </div>
+    <div class="r word">
+      <strong>【江南隽秀 · 徽州古建】</strong><br><br>
+      水润的诗篇，文人画的立体呈现。粉墙黛瓦，错落烟雨之中，建筑是心灵的栖所与自然的延伸。
+    </div>
+  </h1>
+</section>
+
+<section id="xinan">
+  <h1>
+    <div class="l word">
+      <strong>【西南奇崛 · 布达拉宫】</strong><br><br>
+      山与林的合奏，生存智慧的绝地绽放。西南建筑依山而建，雄浑神秘，充满民族文化力量。
+    </div>
+    <div class="r">
+        <img src="./image/布达拉宫.jpg" title="布达拉宫" width="280px">
+    </div>
+  </h1>
+</section>
+
+<section id="xiyu">
+  <h1>
+    <div class="l">
+        <img src="./image/玉门关.jpg" title="玉门关" width="280px">
+    </div>
+    <div class="r word">
+      <strong>【西域异彩 · 玉门关】</strong><br><br>
+      丝路上的关隘传奇，西域建筑融合风沙与文明，以夯土筑城，守疆卫土，见证千年往来。
+    </div>
+  </h1>
+</section>
+
+</div>
+
+<script>
+// 平滑滚动函数
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>木石春秋 - 古建图鉴</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./image/首页背景图.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: system-ui, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  }
+
+  /* 标题 */
+  .page-title {
+    text-align: center;
+    font-size: 34px;
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+    color: #222;
+  }
+  .page-desc {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+
+  /* 导航 */
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgb(234, 252, 252);
+    padding: 15px 12px;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  nav a {
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    font-size: 1rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover {
+    border-bottom: 2px solid #00a4ff;
+  }
+
+  /* 容器 */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 20px;
+  }
+  .s1, .s2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  /* 卡片 */
+  section {
+    flex: 1;
+    min-width: 400px;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  section:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.8);
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: transparent !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+    text-align: center;
+  }
+  .intro {
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .p:last-child { margin-bottom: 0; }
+
+  .l, .r {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .word {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2f4d2d;
+    text-align: center;
+    padding: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* 响应式 */
+  @media (max-width: 768px) {
+    section { min-width: 100%; }
+    .p { flex-direction: column; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a onclick="scrollToSection('top')">木石春秋</a>
+  <a onclick="scrollToSection('n')">梁柱·骨相</a>
+  <a onclick="scrollToSection('s')">墙垣·肌理</a>
+  <a onclick="scrollToSection('ws')">玲珑·意匠</a>
+  <a onclick="scrollToSection('w')">胶漆·岁月</a>
+</nav>
+
+<div id="top" class="page-title">木石春秋</div>
+<div class="page-desc">一木一石，一砖一瓦，书写千年营造史</div>
+
+<div class="container">
+  <div class="s1">
+    <section id="n">
+      <h1>
+        <div class="p1">
+          <div class="title">梁柱·骨相</div>
+          <div class="intro">梁柱为骨，斗拱为魂，撑起千年气象</div>
+        </div>
+        <div class="p2">
+          <div class="p">
+            <div class="l"><img src="./image/梁柱1.jpg" title="梁柱" height="200"></div>
+            <div class="r word">建筑之骨干，以木材构架空间，承载屋顶之重，成就殿堂格局。</div>
+          </div>
+          <div class="p">
+            <div class="r"><img src="./image/斗拱.jpg" title="斗拱" height="200"></div>
+            <div class="l word">木构之灵魂，层层出挑，悬托深远屋檐，是力学与美学的交融。</div>
+          </div>
+        </div>
+      </h1>
+    </section>
+
+    <section id="s">
+      <h1>
+        <div class="p1">
+          <div class="title">墙垣·肌理</div>
+          <div class="intro">砖瓦叠涩，石雕传神，构筑不朽躯干</div>
+        </div>
+        <div class="p2">
+          <div class="p">
+            <div class="l"><img src="./image/砖瓦.jpg" title="砖瓦" height="200"></div>
+            <div class="r word">叠砌为墙，覆瓦为顶，以黏土经火淬炼，构筑建筑的坚实外壳。</div>
+          </div>
+          <div class="p">
+            <div class="r"><img src="./image/石雕1.jpg" title="石雕" height="200"></div>
+            <div class="l word">在碑础、栏板上镌刻纹样，刚中见柔，讲述着信仰与祥瑞的故事。</div>
+          </div>
+        </div>
+      </h1>
+    </section>
+  </div>
+
+  <div class="s2">
+    <section id="ws">
+      <h1>
+        <div class="p1">
+          <div class="title">玲珑·意匠</div>
+          <div class="intro">彩画流丹，雕琢万象，着华服以载道</div>
+        </div>
+        <div class="p2">
+          <div class="p">
+            <div class="l"><img src="./image/彩画.jpg" title="彩画" height="200"></div>
+            <div class="r word">以矿物颜料绘于梁枋，色谱森严，纹样瑰丽，是礼制与艺术的画卷。</div>
+          </div>
+          <div class="p">
+            <div class="r"><img src="./image/雕琢.jpg" title="雕琢" height="200"></div>
+            <div class="l word">在木、石、砖上施以刻刀，纹饰万千，赋予建筑生动的细节与温度。</div>
+          </div>
+        </div>
+      </h1>
+    </section>
+
+    <section id="w">
+      <h1>
+        <div class="p1">
+          <div class="title">胶漆·岁月</div>
+          <div class="intro">灰浆桐油，岁月胶漆，以无形固有形</div>
+        </div>
+        <div class="p2">
+          <div class="p">
+            <div class="l"><img src="./image/灰浆桐胶.jpg" title="灰浆桐油" height="200"></div>
+            <div class="r word">以石灰、糯米、桐油调和，黏合砖石，密封木构，是岁月静好的守护。</div>
+          </div>
+          <div class="p">
+            <div class="r"><img src="./image/胶漆.jpg" title="胶漆" height="200"></div>
+            <div class="l word">大漆为衣，胶矾作底，保护木面，光泽千年，是时间凝固的光华。</div>
+          </div>
+        </div>
+      </h1>
+    </section>
+  </div>
+</div>
+
+<script>
+  function scrollToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+    const nav = document.querySelector('nav')?.offsetHeight || 70;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - nav - 12;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京故宫旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                url(./image/首页背景图.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        /* 修改1：图片容器 - 负责居中 */
+        .pic {
+            text-align: center;     /* 让内部图片水平居中 */
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        /* 修改2：图片本身 - 自适应分辨率 + 圆角 */
+        .pic img {
+            width: 100%;            /* 宽度自适应容器 */
+            max-width: 800px;       /* 最大宽度限制（可选，避免图片过大） */
+            height: auto;           /* 高度自动等比缩放 */
+            border-radius: 20px;    /* 图片圆角 */
+            display: inline-block; 
+            /* 让 margin:0 auto 生效需要配合块级或行内块 */
+        }
+
+
+        .word {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+
+        }
+
+        .text {
+            text-indent: 2em;
+            margin: 10px 0;
+        }
+
+        /* 可选：小屏幕时调整内边距 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .word {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片容器 -->
+    <div class="pic">
+        <img src="./image/北京故宫.jpg" title="北京故宫" alt="北京故宫">
+    </div>
+
+    <div class="word">
+        <p><strong>传奇：</strong></p>
+        <p class="text">故宫博物院建立在明清皇宫"紫禁城"的基础上，是世界上现存规模最大、保存最完整的木结构宫殿建筑群，也是中国第一批全国重点文物保护单位与5A级旅游景区</p>
+        <p><strong>攻略：</strong></p> 
+        <ul>
+            <li>票务预约：实行实名购票，最早可于参观7日前20:00通过官方渠道预订。除法定节假日外，故宫全年周一闭馆，切记不要跑空。</li>
+            <li>开放时间：旺季（4月1日-10月31日）8:30-17:00，淡季（11月1日-3月31日）8:30-16:30，闭馆前1小时会停止入馆。</li>
+            <li>参观路线：实行单向参观，统一从午门（南门）进，参观结束后由神武门（北门）或东华门（东门）出。推荐沿着中轴线游览三大殿，再探秘东西六宫，时间充裕可加逛珍宝馆与钟表馆。</li>
+            <li>游览贴士：进入院内刷身份证即可检票。院内禁止吸烟、禁止使用闪光灯拍照。建议穿着舒适的平底鞋，自带一些补给，并尊重文化遗产，文明参观</li>
+        </ul>
+    </div>
+</body>
+</html>

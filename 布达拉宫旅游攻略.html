@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布达拉宫旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                url(./image/首页背景图.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        /* 修改1：图片容器 - 负责居中 */
+        .pic {
+            text-align: center;     /* 让内部图片水平居中 */
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        /* 修改2：图片本身 - 自适应分辨率 + 圆角 */
+        .pic img {
+            width: 100%;            /* 宽度自适应容器 */
+            max-width: 800px;       /* 最大宽度限制（可选，避免图片过大） */
+            height: auto;           /* 高度自动等比缩放 */
+            border-radius: 20px;    /* 图片圆角 */
+            display: inline-block; 
+            /* 让 margin:0 auto 生效需要配合块级或行内块 */
+        }
+
+
+        .word {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+
+        }
+
+        .text {
+            text-indent: 2em;
+            margin: 10px 0;
+        }
+
+        /* 可选：小屏幕时调整内边距 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .word {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片容器 -->
+    <div class="pic">
+        <img src="./image/布达拉宫.jpg" title="北京故宫" alt="北京故宫">
+    </div>
+
+    <div class="word">
+        <p><strong>传奇：</strong></p>
+        <p class="text">整座宫殿依红山而建，主楼高达117米，由白宫（政务与生活区）和红宫（宗教灵塔与佛殿）组成，融合了藏、汉等多民族建筑精华，宫内珍藏着8座达赖喇嘛金质灵塔及数万件佛像、唐卡、典籍等文物，是各民族交往交流交融的历史见证，被誉为“世界屋脊上的明珠”。</p>
+        <p><strong>攻略：</strong></p> 
+        <p><strong>门票预约与线路：</strong></p> 
+        <ul>
+            <li>提前抢票：旺季（5-10月）门票200元/人，淡季（11-4月）100元/人。务必提前10天在“布达拉宫票务预订”微信小程序实名抢票，景区不售当日票。</li>
+            <li>游览线路：统一从南门（正门）进入。推荐路线：雪城 -> 无字碑 -> 白宫（达赖办公寝宫） -> 红宫（灵塔殿与佛殿） -> 西大殿，最后从北门（后山）下山</li>
+        </ul>
+        <p><strong>核心看点与机位：</strong></p> 
+        <ul>
+            <li>宫内看点：重点打卡五世达赖喇嘛灵塔（宫内最大最奢华）、法王洞（松赞干布修行地）和圣观音殿（布达拉宫镇宫之宝）。</li>
+            <li>最佳机位：药王山观景台是拍摄50元人民币背面同款画面的绝佳位置；宗角禄康公园的湖面能拍到布达拉宫绝美的倒影。</li>  
+        </ul>
+        <p><strong>避坑与注意事项：</strong></p> 
+        <ul>
+            <li>严禁拍照：宫内严禁拍照、录像、戴帽和戴墨镜，参观时请保持安静，不可用手指佛像或触摸经文。</li>
+            <li>着装要求：参观需穿长裤长裙，严禁穿短裤、短裙和拖鞋，否则会被拒之门外。</li>
+            <li>防高反提示：布达拉宫楼梯陡峭，参观时请放缓脚步、避免剧烈运动。建议提前在拉萨适应1-2天再前往，并随身携带保暖衣物和氧气瓶。</li>
+        </ul>
+    </div>
+</body>
+</html>

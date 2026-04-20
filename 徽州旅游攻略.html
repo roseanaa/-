@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>徽州旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                url(./image/首页背景图.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        /* 修改1：图片容器 - 负责居中 */
+        .pic {
+            text-align: center;     /* 让内部图片水平居中 */
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        /* 修改2：图片本身 - 自适应分辨率 + 圆角 */
+        .pic img {
+            width: 100%;            /* 宽度自适应容器 */
+            max-width: 800px;       /* 最大宽度限制（可选，避免图片过大） */
+            height: auto;           /* 高度自动等比缩放 */
+            border-radius: 20px;    /* 图片圆角 */
+            display: inline-block; 
+            /* 让 margin:0 auto 生效需要配合块级或行内块 */
+        }
+
+
+        .word {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+
+        }
+
+        .text {
+            text-indent: 2em;
+            margin: 10px 0;
+        }
+
+        /* 可选：小屏幕时调整内边距 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .word {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片容器 -->
+    <div class="pic">
+        <img src="./image/徽州.jpg" title="徽州" alt="徽州">
+    </div>
+
+    <div class="word">
+        <p><strong>传奇：</strong></p>
+        <p class="text">白墙黛瓦配马头墙（其实是防火用的封火墙），远看像一幅淡雅的水墨画。但走近看，砖雕、木雕、石雕（三雕）极尽繁复，每一刀都是“炫富”的资本，主打一个“外面看是素人，里面看是豪宅”。</p>
+        <p><strong>选村攻略：</strong></p> 
+        <ul>
+            <li>宏村（画里乡村）：新手必刷。看“牛形”水系，月沼倒影是教科书级照片。</li>
+            <li>西递（牌坊世家）：文化控首选。牌坊、祠堂保存极好，适合听家族故事。</li>
+            <li>呈坎（八卦迷宫）：深度玩家。按风水八卦布局，容易迷路，建议请个本地向导。</li>
+            
+        </ul>
+        <p><strong>闯关秘籍：</strong></p> 
+        <ul>
+            <li>黄金时间：春秋两季。春天有油菜花，秋天有晒秋，避开雨季和酷暑。</li>
+            <li>摄影玄学：早起（7点前）抢晨雾倒影，傍晚拍灯笼亮起的暖光。穿件素色衣服，你就是画中人</li>
+            <li>防坑贴士：青石板路遇雨极滑，穿防滑鞋；对路边兜售的“古董”保持理性。</li>
+        </ul>
+        <p><strong>闯关秘籍：</strong></p> 
+        <ul>
+            <li>D1：宏村打卡月沼、南湖，住村里听水声。</li>
+            <li>D2：上午西递看牌坊听史，下午转战呈坎感受风水玄学。</li>
+        </ul>
+    </div>
+</body>
+</html>
