@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古建图鉴 - 中国古建筑四维解读</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <h1><a href="#">古建图鉴</a></h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="./地域风华.html" target="_blank">地域风华</a></li>
+                    <li><a href="./匠心营造.html" target="_blank">匠心营造</a></li>
+                    <li><a href="./木石春秋.html" target="_blank">木石春秋</a></li>
+                    <li><a href="./功用流芳.html" target="_blank">功用流芳</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增：首页总起引言（让网页有主题、不再简单） -->
+    <div class="intro" style="text-align:center; padding:30px 20px; font-size:18px; max-width:1000px; margin:0 auto; color:#333;">
+        <h2 style="font-size:30px; margin-bottom:12px;">中国古建筑 · 四维解读</h2>
+        <p>以四座经典古建为样本，从<b>地域、技艺、材料、功能</b>四大维度，读懂中式建筑的完整体系。</p>
+        <p>每一座古建，都是一段历史；每一个分类，都是一种观察视角。</p>
+    </div>
+
+    <!-- 轮播图区域 -->
+    <div class="carousel">
+        <div class="wrapper">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <!-- 故宫 -->
+                    <div class="carousel-slide-item">
+                        <a href="./北京故宫旅游攻略·.html" target="_blank">
+                            <img src="./image/北京故宫.jpg" alt="北京故宫">
+                        </a>
+                        <div class="slide-caption">
+                            <h3>北京故宫</h3>
+                            <p>紫禁城中轴气象，六百年皇家宫殿</p>
+                            <p style="font-size:13px; margin-top:5px;">
+                                地域：北地｜匠心：宫廷规制｜木石：木构梁柱｜功用：皇权礼制
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 徽州 -->
+                    <div class="carousel-slide-item">
+                        <a href="./徽州旅游攻略.html" target="_blank">
+                            <img src="./image/徽州.jpg" alt="徽州古建">
+                        </a>
+                        <div class="slide-caption">
+                            <h3>徽州古韵</h3>
+                            <p>粉墙黛瓦马头墙，四水归堂岁月长</p>
+                            <p style="font-size:13px; margin-top:5px;">
+                                地域：江南｜匠心：砖木雕刻｜木石：青砖黛瓦｜功用：民居家族
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 玉门关 -->
+                    <div class="carousel-slide-item">
+                        <a href="./玉门关旅游攻略.html" target="_blank">
+                            <img src="./image/玉门关.jpg" alt="玉门关">
+                        </a>
+                        <div class="slide-caption">
+                            <h3>玉门关</h3>
+                            <p>羌笛何须怨杨柳，春风不度玉门关</p>
+                            <p style="font-size:13px; margin-top:5px;">
+                                地域：西域｜匠心：夯土筑城｜木石：黄土石基｜功用：关隘防御
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 布达拉宫 -->
+                    <div class="carousel-slide-item">
+                        <a href="./布达拉宫旅游攻略.html" target="_blank">
+                            <img src="./image/布达拉宫.jpg" alt="布达拉宫">
+                        </a>
+                        <div class="slide-caption">
+                            <h3>布达拉宫</h3>
+                            <p>世界屋脊的明珠，藏式建筑巅峰</p>
+                            <p style="font-size:13px; margin-top:5px;">
+                                地域：高原｜匠心：藏式营造｜木石：石木混合｜功用：宗教宫殿
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增：四大建筑总览（带交互式功能） -->
+    <div class="overview" style="margin:50px auto; max-width:1200px; padding:0 20px;">
+        <h3 style="text-align:center; font-size:24px; margin-bottom:25px;">四座经典古建 · 贯穿全书</h3>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;" id="overview-container">
+            <!-- 故宫卡片 - 点击跳转轮播第0页 -->
+            <div onclick="goToSlide(0)"
+                 class="overview-card"
+                 style="background:rgba(255,255,255,0.9); padding:20px; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:all 0.3s ease;">
+                <h4>🏯 北京故宫</h4>
+                <p>北方宫廷建筑代表</p>
+            </div>
+            <!-- 徽州卡片 - 点击跳转轮播第1页 -->
+            <div onclick="goToSlide(1)"
+                 class="overview-card"
+                 style="background:rgba(255,255,255,0.9); padding:20px; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:all 0.3s ease;">
+                <h4>🏡 徽州古韵</h4>
+                <p>江南民居建筑代表</p>
+            </div>
+            <!-- 玉门关卡片 - 点击跳转轮播第2页 -->
+            <div onclick="goToSlide(2)"
+                 class="overview-card"
+                 style="background:rgba(255,255,255,0.9); padding:20px; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:all 0.3s ease;">
+                <h4>🏔️ 玉门关</h4>
+                <p>边塞关隘建筑代表</p>
+            </div>
+            <!-- 布达拉宫卡片 - 点击跳转轮播第3页 -->
+            <div onclick="goToSlide(3)"
+                 class="overview-card"
+                 style="background:rgba(255,255,255,0.9); padding:20px; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:all 0.3s ease;">
+                <h4>🕌 布达拉宫</h4>
+                <p>高原宗教建筑代表</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部四大板块 -->
+    <div class="bottom-section">
+        <div class="wrapper">
+            <div class="block-list">
+                <div class="block-item">
+                    <div class="block-text">
+                        <h4><a href="./地域风华.html" target="_blank">地域风华</a></h4>
+                        <p>看四座建筑的地理差异</p>
+                        <ul>
+                            <li>北地雄浑</li>
+                            <li>江南隽秀</li>
+                            <li>西南奇崛</li>
+                            <li>西域异彩</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-item">
+                    <div class="block-text">
+                        <h4><a href="./匠心营造.html" target="_blank">匠心营造</a></h4>
+                        <p>看四座建筑的工艺智慧</p>
+                        <ul>
+                            <li>屋顶飞檐</li>
+                            <li>木构核心</li>
+                            <li>空间意境</li>
+                            <li>装饰美学</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-item">
+                    <div class="block-text">
+                        <h4><a href="./木石春秋.html" target="_blank">木石春秋</a></h4>
+                        <p>看四座建筑的材料特点</p>
+                        <ul>
+                            <li>梁柱·骨相</li>
+                            <li>墙垣·肌理</li>
+                            <li>玲珑·意匠</li>
+                            <li>胶漆·岁月</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-item">
+                    <div class="block-text">
+                        <h4><a href="./功用流芳.html" target="_blank">功用流芳</a></h4>
+                        <p>看四座建筑的功能价值</p>
+                        <ul>
+                            <li>礼制与信仰</li>
+                            <li>安居与统治</li>
+                            <li>通行与守卫</li>
+                            <li>游赏与寄情</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slidesContainer = document.querySelector('.carousel-slides');
+        const slides = document.querySelectorAll('.carousel-slide-item');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        const carousel = document.querySelector('.carousel-container');
+
+        let currentIndex = 0;
+        let autoTimer;
+        const totalSlides = slides.length;
+
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentIndex = index;
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+
+            // 🔥 关键：轮播切换时，更新下方卡片的高亮状态
+            updateCardActive();
+        }
+
+        function nextSlide() { goToSlide(currentIndex + 1); }
+        function prevSlide() { goToSlide(currentIndex - 1); }
+
+        function startAutoPlay() {
+            autoTimer = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoPlay() { clearInterval(autoTimer); }
+
+        prevBtn.addEventListener('click', () => { prevSlide(); stopAutoPlay(); startAutoPlay(); });
+        nextBtn.addEventListener('click', () => { nextSlide(); stopAutoPlay(); startAutoPlay(); });
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { goToSlide(i); stopAutoPlay(); startAutoPlay(); });
+        });
+
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // ==========================
+        // 新增：下方总览卡片 高亮联动逻辑
+        // ==========================
+        const overviewCards = document.querySelectorAll('.overview-card');
+        function updateCardActive() {
+            overviewCards.forEach((card, i) => {
+                if (i === currentIndex) {
+                    // 高亮样式：和你导航栏 active 颜色统一
+                    card.style.background = '#e6f7ff';
+                    card.style.border = '2px solid #00a4ff';
+                    card.style.transform = 'translateY(-8px) scale(1.03)';
+                } else {
+                    // 恢复默认样式
+                    card.style.background = 'rgba(255,255,255,0.9)';
+                    card.style.border = 'none';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }
+
+        // 初始化第一页高亮
+        updateCardActive();
+
+        startAutoPlay();
+    </script>
+</body>
+</html>
